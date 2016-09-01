@@ -58,7 +58,7 @@
     <entry>
       <title><![CDATA[使用hexo+GitHub搭建自己的博客]]></title>
       <url>http://yoursite.com/2016/08/31/%E4%BD%BF%E7%94%A8hexo-GitHub%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
-      <content type="html"><![CDATA[<p>作为一名前端程序媛，没有自己的博客，听起来是不是很low！对，你没有听错，我确实没有亲自搭建过自己的博客，就在2016年8月30日，偶尔阅读前端工程师必备技能的时候，发现了搭建自己博客这个东西，于是决定搭建一个博客来存储自己的知识总结，以便形成自己的知识体系。这之前使用github<a href="https://github.com/lylhub" target="_blank" rel="external">我的github地址</a>管理自己的代码（其实写的比较少）,而且很多知识性的总结写在里面不是很方便阅读。博客可以很方便的把知识总结存储起来。以前用过CSDN,用于存储知识还是可以，但是本地化和主题等就没有了，毕竟是用人家的网站，要想个性化还是要自己亲自去搭建一个高大上的网站吧。你正在浏览这个博客网站，耗费了本姑娘很长时间才搭建好的！！<br>这里有一篇很详细的教程：<a href="http://www.jianshu.com/p/985d07d88ef4" target="_blank" rel="external">使用 GitHub Pages + Hexo 基础教程</a>;<br>因为还没有写过正式的博客，对于hexo的使用还不熟悉，后面将更新我的的使用心得。</p>
+      <content type="html"><![CDATA[<p>作为一名前端程序媛，没有自己的博客，听起来是不是很low！对，你没有听错，我确实没有亲自搭建过自己的博客，就在2016年8月30日，偶尔阅读前端工程师必备技能的时候，发现了搭建自己博客这个东西，于是决定搭建一个博客来存储自己的知识总结，以便形成自己的知识体系。这之前使用github<a href="https://github.com/lylhub" target="_blank" rel="external">我的github地址</a>管理自己的代码（其实写的比较少）,而且很多知识性的总结写在里面不是很方便阅读。博客可以很方便的把知识总结存储起来。以前用过CSDN,用于存储知识还是可以，但是本地化和主题等就没有了，毕竟是用人家的网站，要想个性化还是要自己亲自去搭建一个高大上的网站吧。你正在浏览这个博客网站，耗费了本姑娘很长时间才搭建好的！！<br><a id="more"></a><br>这里有一篇很详细的教程：<a href="http://www.jianshu.com/p/985d07d88ef4" target="_blank" rel="external">使用 GitHub Pages + Hexo 基础教程</a>;<br>因为还没有写过正式的博客，对于hexo的使用还不熟悉，后面将更新我的的使用心得。</p>
 ]]></content>
     </entry>
     
