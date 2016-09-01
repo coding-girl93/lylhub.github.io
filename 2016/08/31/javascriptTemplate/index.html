@@ -84,31 +84,46 @@
 
 
 
-<meta name="description" content="javascript模板引擎
+<meta name="description" content="简介
 javascript模板引擎作为数据与界面分离工作中的重要角色，下面我们从模板引擎的实现原理以及目前流行的模板引擎，模板引擎的优势来介绍一下
 
-javascript 模板引擎的原理虽然每个引擎从模板语法、语法解析、变量赋值、字符串拼接的实现方式各有所不同，但关键的渲染原理仍然是动态执行 javascript 字符串。
-JavaScript模板引擎的优势
-js模板的本质">
+原理虽然每个引擎从模板语法、语法解析、变量赋值、字符串拼接的实现方式各有所不同，但关键的渲染原理仍然是动态执行 javascript 字符串。
+优势
+js模板的本质是 变静为动
+
+
+视图和代码逻辑分离、低耦合
+可拓展、可维护、开发效率高
+代码可读性">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript模板引擎">
-<meta property="og:url" content="http://yoursite.com/2016/08/31/jsTemplate/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/08/31/javascriptTemplate/index.html">
 <meta property="og:site_name" content="Beginner's Mind">
-<meta property="og:description" content="javascript模板引擎
+<meta property="og:description" content="简介
 javascript模板引擎作为数据与界面分离工作中的重要角色，下面我们从模板引擎的实现原理以及目前流行的模板引擎，模板引擎的优势来介绍一下
 
-javascript 模板引擎的原理虽然每个引擎从模板语法、语法解析、变量赋值、字符串拼接的实现方式各有所不同，但关键的渲染原理仍然是动态执行 javascript 字符串。
-JavaScript模板引擎的优势
-js模板的本质">
-<meta property="og:updated_time" content="2016-08-31T10:04:36.000Z">
+原理虽然每个引擎从模板语法、语法解析、变量赋值、字符串拼接的实现方式各有所不同，但关键的渲染原理仍然是动态执行 javascript 字符串。
+优势
+js模板的本质是 变静为动
+
+
+视图和代码逻辑分离、低耦合
+可拓展、可维护、开发效率高
+代码可读性">
+<meta property="og:updated_time" content="2016-09-01T07:39:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript模板引擎">
-<meta name="twitter:description" content="javascript模板引擎
+<meta name="twitter:description" content="简介
 javascript模板引擎作为数据与界面分离工作中的重要角色，下面我们从模板引擎的实现原理以及目前流行的模板引擎，模板引擎的优势来介绍一下
 
-javascript 模板引擎的原理虽然每个引擎从模板语法、语法解析、变量赋值、字符串拼接的实现方式各有所不同，但关键的渲染原理仍然是动态执行 javascript 字符串。
-JavaScript模板引擎的优势
-js模板的本质">
+原理虽然每个引擎从模板语法、语法解析、变量赋值、字符串拼接的实现方式各有所不同，但关键的渲染原理仍然是动态执行 javascript 字符串。
+优势
+js模板的本质是 变静为动
+
+
+视图和代码逻辑分离、低耦合
+可拓展、可维护、开发效率高
+代码可读性">
 
 
 
@@ -129,7 +144,7 @@ js模板的本质">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/31/jsTemplate/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/31/javascriptTemplate/"/>
 
   <title> javascript模板引擎 | Beginner's Mind </title>
 </head>
@@ -189,7 +204,7 @@ js模板的本质">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -199,7 +214,7 @@ js模板的本质">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -209,7 +224,7 @@ js模板的本质">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -272,7 +287,7 @@ js模板的本质">
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-08-31T16:06:01+08:00" content="2016-08-31">
               2016-08-31
             </time>
@@ -284,7 +299,7 @@ js模板的本质">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/javascript/" itemprop="url" rel="index">
@@ -320,11 +335,11 @@ js模板的本质">
       
 
       
-        <h2 id="javascript模板引擎"><a href="#javascript模板引擎" class="headerlink" title="javascript模板引擎"></a>javascript模板引擎</h2><blockquote>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
 <p>javascript模板引擎作为数据与界面分离工作中的重要角色，下面我们从模板引擎的实现原理以及目前流行的模板引擎，模板引擎的优势来介绍一下</p>
 </blockquote>
-<h3 id="javascript-模板引擎的原理"><a href="#javascript-模板引擎的原理" class="headerlink" title="javascript 模板引擎的原理"></a>javascript 模板引擎的原理</h3><p>虽然每个引擎从模板语法、语法解析、变量赋值、字符串拼接的实现方式各有所不同，但关键的渲染原理仍然是动态执行 javascript 字符串。</p>
-<h3 id="JavaScript模板引擎的优势"><a href="#JavaScript模板引擎的优势" class="headerlink" title="JavaScript模板引擎的优势"></a>JavaScript模板引擎的优势</h3><blockquote>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>虽然每个引擎从模板语法、语法解析、变量赋值、字符串拼接的实现方式各有所不同，但关键的渲染原理仍然是动态执行 javascript 字符串。</p>
+<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><blockquote>
 <p>js模板的本质是 <code>变静为动</code></p>
 </blockquote>
 <ul>
@@ -436,10 +451,10 @@ js模板的本质">
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -456,7 +471,7 @@ js模板的本质">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -464,7 +479,7 @@ js模板的本质">
             <div class="site-state-item site-state-categories">
               <a href="/categories">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-name">Kategorien</span>
               </a>
             </div>
           
@@ -473,7 +488,7 @@ js模板的本质">
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -501,7 +516,7 @@ js模板的本质">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript模板引擎"><span class="nav-number">1.</span> <span class="nav-text">javascript模板引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript-模板引擎的原理"><span class="nav-number">1.1.</span> <span class="nav-text">javascript 模板引擎的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript模板引擎的优势"><span class="nav-number">1.2.</span> <span class="nav-text">JavaScript模板引擎的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目前流行的-JavaScript模板引擎"><span class="nav-number">1.3.</span> <span class="nav-text">目前流行的 JavaScript模板引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#artTemplate-腾讯"><span class="nav-number">1.3.1.</span> <span class="nav-text">artTemplate(腾讯)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mustache"><span class="nav-number">1.3.2.</span> <span class="nav-text">Mustache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#baiduTemplate-百度"><span class="nav-number">1.3.3.</span> <span class="nav-text">baiduTemplate(百度)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#juicer-淘宝"><span class="nav-number">1.3.4.</span> <span class="nav-text">juicer(淘宝)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Underscore-Templates"><span class="nav-number">1.3.5.</span> <span class="nav-text">Underscore Templates</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Embedded-JS-Templates"><span class="nav-number">1.3.6.</span> <span class="nav-text">Embedded JS Templates</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">1.4.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优势"><span class="nav-number">1.2.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目前流行的-JavaScript模板引擎"><span class="nav-number">1.3.</span> <span class="nav-text">目前流行的 JavaScript模板引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#artTemplate-腾讯"><span class="nav-number">1.3.1.</span> <span class="nav-text">artTemplate(腾讯)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mustache"><span class="nav-number">1.3.2.</span> <span class="nav-text">Mustache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#baiduTemplate-百度"><span class="nav-number">1.3.3.</span> <span class="nav-text">baiduTemplate(百度)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#juicer-淘宝"><span class="nav-number">1.3.4.</span> <span class="nav-text">juicer(淘宝)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Underscore-Templates"><span class="nav-number">1.3.5.</span> <span class="nav-text">Underscore Templates</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Embedded-JS-Templates"><span class="nav-number">1.3.6.</span> <span class="nav-text">Embedded JS Templates</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">1.4.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -528,7 +543,7 @@ js模板的本质">
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
