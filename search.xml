@@ -4,6 +4,13 @@
   
     
     <entry>
+      <title><![CDATA[Angular-popups]]></title>
+      <url>http://yoursite.com/2016/09/13/Angular-popups/</url>
+      <content type="html"><![CDATA[<p><a href="https://aui.github.io/angular-popups/#popup" target="_blank" rel="external">基于angularJS的浮层组件</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[JavaScript设计模式]]></title>
       <url>http://yoursite.com/2016/09/08/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
       <content type="html"><![CDATA[<h1 id="JavaScript设计模式（Design-pattern）"><a href="#JavaScript设计模式（Design-pattern）" class="headerlink" title="JavaScript设计模式（Design pattern）"></a>JavaScript设计模式（Design pattern）</h1><p>我们每天都在使用设计模式，但是不了解设计模式的人，可能根本不知道自己已经在使用设计模式了，了解设计模式，有利于提高自己的代码质量。那么什么是设计模式？设计模式可以为我们带来哪些好处呢？</p>
