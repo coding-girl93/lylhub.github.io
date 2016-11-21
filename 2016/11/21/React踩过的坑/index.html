@@ -85,30 +85,18 @@
 
 
 <meta name="description" content="setState延迟
-分页操作，点击下一页，第一次点击无效，第二次点击生效
-
-123this.setState(&amp;#123;firstRow:(page-1)*pageSize&amp;#125;,()=&amp;gt;&amp;#123;    this.refresh()    &amp;#125;)
-利用setState的回调，等到状态更改成功之后再操作
-列表页删除一项后，列表页不能实时刷新原因：删除操作后，后端可能还没处">
+分页操作，点击下一页，第一次点击无效，第二次点击生效">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React踩过的坑">
 <meta property="og:url" content="http://yoursite.com/2016/11/21/React踩过的坑/index.html">
 <meta property="og:site_name" content="Sunny1993">
 <meta property="og:description" content="setState延迟
-分页操作，点击下一页，第一次点击无效，第二次点击生效
-
-123this.setState(&amp;#123;firstRow:(page-1)*pageSize&amp;#125;,()=&amp;gt;&amp;#123;    this.refresh()    &amp;#125;)
-利用setState的回调，等到状态更改成功之后再操作
-列表页删除一项后，列表页不能实时刷新原因：删除操作后，后端可能还没处">
-<meta property="og:updated_time" content="2016-11-21T15:46:03.000Z">
+分页操作，点击下一页，第一次点击无效，第二次点击生效">
+<meta property="og:updated_time" content="2016-11-21T15:48:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React踩过的坑">
 <meta name="twitter:description" content="setState延迟
-分页操作，点击下一页，第一次点击无效，第二次点击生效
-
-123this.setState(&amp;#123;firstRow:(page-1)*pageSize&amp;#125;,()=&amp;gt;&amp;#123;    this.refresh()    &amp;#125;)
-利用setState的回调，等到状态更改成功之后再操作
-列表页删除一项后，列表页不能实时刷新原因：删除操作后，后端可能还没处">
+分页操作，点击下一页，第一次点击无效，第二次点击生效">
 
 
 
@@ -377,6 +365,7 @@
         <h3 id="setState延迟"><a href="#setState延迟" class="headerlink" title="setState延迟"></a>setState延迟</h3><ul>
 <li>分页操作，点击下一页，第一次点击无效，第二次点击生效</li>
 </ul>
+<a id="more"></a>
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.setState(&#123;firstRow:<span class="function"><span class="params">(page<span class="number">-1</span>)</span>*pageSize&#125;,<span class="params">()</span>=&gt;</span>&#123;</div><div class="line">    <span class="keyword">this</span>.refresh()</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
 <p>利用setState的回调，等到状态更改成功之后再操作</p>
 <h3 id="列表页删除一项后，列表页不能实时刷新"><a href="#列表页删除一项后，列表页不能实时刷新" class="headerlink" title="列表页删除一项后，列表页不能实时刷新"></a>列表页删除一项后，列表页不能实时刷新</h3><p>原因：删除操作后，后端可能还没处理好，就重新拉取数据，导致数据没有变化</p>
