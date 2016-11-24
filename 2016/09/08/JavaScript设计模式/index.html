@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript设计模式 | 有一个姑娘在CODING</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript设计模式（Design pattern）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript设计模式">
+<meta property="og:url" content="http://yoursite.com/2016/09/08/JavaScript设计模式/index.html">
+<meta property="og:site_name" content="有一个姑娘在CODING">
+<meta property="og:description" content="JavaScript设计模式（Design pattern）">
+<meta property="og:updated_time" content="2016-11-24T11:55:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript设计模式">
+<meta name="twitter:description" content="JavaScript设计模式（Design pattern）">
+  
+    <link rel="alternative" href="/atom.xml" title="有一个姑娘在CODING" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">盐粒儿</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">不忘初心，方得始终</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/bookmarks/" style="font-size: 10px;">bookmarks</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design-pattern</a> <a href="/tags/gitgub-pages/" style="font-size: 10px;">gitgub pages</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/template/" style="font-size: 10px;">template</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">盐粒儿</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">盐粒儿</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不忘初心，方得始终</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-JavaScript设计模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/08/JavaScript设计模式/" class="article-date">
+      <time datetime="2016-09-07T16:17:18.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript设计模式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/">design-pattern</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="JavaScript设计模式（Design-pattern）"><a href="#JavaScript设计模式（Design-pattern）" class="headerlink" title="JavaScript设计模式（Design pattern）"></a>JavaScript设计模式（Design pattern）</h1><a id="more"></a>
+<p>我们每天都在使用设计模式，但是不了解设计模式的人，可能根本不知道自己已经在使用设计模式了，了解设计模式，有利于提高自己的代码质量。那么什么是设计模式？设计模式可以为我们带来哪些好处呢？</p>
+<blockquote>
+<p>设计模式（Design pattern）是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。 毫无疑问，设计模式于己于他人于系统都是多赢的；设计模式使代码编制真正工程化；设计模式是软件工程的基石脉络，如同大厦的结构一样。</p>
+</blockquote>
+<h2 id="设计模式六大原则"><a href="#设计模式六大原则" class="headerlink" title="设计模式六大原则"></a>设计模式六大原则</h2><blockquote>
+<p>就像每种语言都有自己的规范，设计模式也遵循自己的原则</p>
+</blockquote>
+<ul>
+<li><p>开闭原则（OCP：Open Closed Principe）</p>
+<blockquote>
+<p>Software entites(classes，modules，functions，etc)，should be  open for extension ,but closed for modification.</p>
+<p>软件实体（类，模块，方法等等）应当对扩展开发，对修改关闭。</p>
+</blockquote>
+</li>
+<li><p>单一职责（SRP:Single Responsibility Principle）</p>
+<blockquote>
+<p>A class should have only one reason to change</p>
+</blockquote>
+</li>
+<li><p>里氏代换原则（LSP:Leskov Substitution Principle）</p>
+</li>
+<li><p>依赖倒转原则（DIP:Dependency Inversion Principle）</p>
+</li>
+<li><p>接口隔离(ISP:Interface Segregation Principle)</p>
+</li>
+<li><p>迪米特法则(最少知识原则)(PLK :Principle of Least Knowledge)</p>
+<p>原则介绍<a href="https://segmentfault.com/a/1190000000691175" target="_blank" rel="external">请戳这里</a>;</p>
+</li>
+</ul>
+<h2 id="设计模式分类"><a href="#设计模式分类" class="headerlink" title="设计模式分类"></a>设计模式分类</h2><h3 id="创建型设计模式Creational"><a href="#创建型设计模式Creational" class="headerlink" title="创建型设计模式Creational"></a>创建型设计模式Creational</h3><blockquote>
+<p>根据创建对象的概念进行分类</p>
+</blockquote>
+<ul>
+<li><h4 id="工厂方法：Factory-Method"><a href="#工厂方法：Factory-Method" class="headerlink" title="工厂方法：Factory Method"></a>工厂方法：Factory Method</h4></li>
+</ul>
+<blockquote>
+<p>定义一个用于创建对象的接口，让子类决定实例化哪一个类。简单点说就是茶水间的饮料机，要咖啡还是牛奶取决于你按哪个按钮。</p>
+</blockquote>
+<p>上栗子：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">子类：</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CarFactory</span><span class="params">()</span></span>&#123;</div><div class="line">  alert(<span class="string">'car'</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">TrucksFactory</span><span class="params">()</span></span>&#123;</div><div class="line">  alert(<span class="string">'Trucks'</span>);</div><div class="line">&#125;</div><div class="line">工厂类：</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Factory</span><span class="params">(type)</span></span>&#123;</div><div class="line">  <span class="keyword">if</span>(type == <span class="string">'car'</span>)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> CarFactory();</div><div class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(type == <span class="string">'Trucks'</span>)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> TrucksFactory();</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">使用：</div><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> Factory(<span class="string">'car'</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>使用场景</p>
+</blockquote>
+<ol>
+<li>根据不同的环境创建不同的实例对象</li>
+<li>对象的构建比较复杂</li>
+<li>处理大量有相同属性的小对象</li>
+</ol>
+<blockquote>
+<p>应用原则</p>
+</blockquote>
+<ol>
+<li>单一职责</li>
+</ol>
+<p>因为每次扩展都需要修改工厂类，这样违背了开闭原则。</p>
+<ul>
+<li><h4 id="抽象工厂：Abstract-Factory"><a href="#抽象工厂：Abstract-Factory" class="headerlink" title="抽象工厂：Abstract Factory"></a>抽象工厂：Abstract Factory</h4></li>
+</ul>
+<blockquote>
+<p>抽象工厂是工厂模式的升级版，他用来创建一组相关或者相互依赖的对象。上节学习了工厂模式，类的创建依赖工厂类，程序需要扩展时，我们必须创建新的工厂类。工厂类是用来生产产品的，那我们也可以把“工厂类当成我们要生产的产品”，所以抽象工厂就是“工厂的工厂”，即生产工厂的工厂。抽象工厂模式就是对功能类单独创建工厂类,这样就不必修改之前的代码，又扩展了功能。</p>
+</blockquote>
+<p>上栗子：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span><span class="params">()</span></span>&#123;</div><div class="line">  alert(<span class="string">'car'</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Truck</span><span class="params">()</span></span>&#123;</div><div class="line">  alert(<span class="string">'Truck'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//直接创建功能类工厂</span></div><div class="line"><span class="comment">//汽车</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CarFactory</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">CarFactory.prototype.produce = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Car();</div><div class="line">&#125;</div><div class="line"><span class="comment">//货车</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">TruckFactory</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">TruckFactory.prototype.produce = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Truck();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//使用</span></div><div class="line"><span class="keyword">var</span> factory = <span class="keyword">new</span> TruckFactory();</div><div class="line"><span class="keyword">var</span> truck  = factory.produce();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>使用场景</p>
+</blockquote>
+<p>在一个继承体系中存在多个等级结构：例如不同的厂家生产car,并且分属各个等级结构中的实现类之间存在着一定的关联或者约束</p>
+<blockquote>
+<p>应用原则</p>
+</blockquote>
+<ol>
+<li>单一原则</li>
+<li>开闭原则</li>
+</ol>
+<ul>
+<li><h4 id="建造者：Builder"><a href="#建造者：Builder" class="headerlink" title="建造者：Builder"></a>建造者：Builder</h4></li>
+</ul>
+<blockquote>
+<p>建造器使得我们仅仅只通过定义对象的类型和内容，就可以去构建复杂的对象，为我们屏蔽了明确创造或者展现对象的过程。</p>
+</blockquote>
+<p><code>四要素：</code></p>
+<p>产品类、抽象建造者类、建造者类、指导类</p>
+<p>上栗子：前面你创建了一个生产保时捷的工厂，生产一台保时捷911需要的主要部件都一样(引擎，轮子，方向盘…)和流程是不变的，变的是引擎，轮子，控制系统等等部件具体实现，这些部件的生产交由具体的builder去生产。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line">产品类：</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> _frame, _engine, _wheel;</div><div class="line">  <span class="keyword">this</span>.setFrame = <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</div><div class="line">    _frame = val;</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.setEngine = <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</div><div class="line">    _engine = val;</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.setWheel = <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</div><div class="line">    _wheel = val;</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.getFrame = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> _frame</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.getEngine = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> _engine</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.getWheel = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> _wheel</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.check = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(_frame + <span class="string">'检查完毕'</span>);</div><div class="line">    <span class="built_in">console</span>.log(_engine + <span class="string">'检查完毕'</span>);</div><div class="line">    <span class="built_in">console</span>.log(_wheel + <span class="string">'检查完毕'</span>);</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">抽象建造者类：</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Builder</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   	<span class="comment">//定义流程的接口</span></div><div class="line">   	buildFrame、buildEngine、buildWheel、buildCar</div><div class="line">&#125;</div><div class="line"></div><div class="line">具体建造者类：</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Builder911</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.__proto__ = <span class="keyword">new</span> Builder();</div><div class="line">  <span class="keyword">var</span> _car = <span class="keyword">new</span> Car();</div><div class="line">  <span class="keyword">this</span>.buildFrame = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'制造911骨架'</span>);</div><div class="line">    _car.setFrame(<span class="string">'911骨架'</span>);</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.buildEngine = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'制造911引擎'</span>);</div><div class="line">    _car.setEngine(<span class="string">'911引擎'</span>);</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.buildWheel = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'制造911轮子'</span>);</div><div class="line">    _car.setWheel(<span class="string">'911轮子'</span>);</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.buildCar = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'911汽车各部组装完毕'</span>);</div><div class="line">    <span class="keyword">return</span> _car;</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">BuilderCayma</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.__proto__ = <span class="keyword">new</span> Builder();</div><div class="line">  <span class="keyword">var</span> _car = <span class="keyword">new</span> Car();</div><div class="line">  <span class="keyword">this</span>.buildFrame = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'制造Cayma骨架'</span>);</div><div class="line">    _car.setFrame(<span class="string">'Cayma骨架'</span>);</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.buildEngine = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'制造Cayma引擎'</span>);</div><div class="line">    _car.setEngine(<span class="string">'Cayma引擎'</span>);</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.buildWheel = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'制造Cayma轮子'</span>);</div><div class="line">    _car.setWheel(<span class="string">'Cayma轮子'</span>);</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.buildCar = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Cayma汽车各部组装完毕'</span>);</div><div class="line">    <span class="keyword">return</span> _car;</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">指导类：</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Director</span>(<span class="params">Builder</span>) </span>&#123;</div><div class="line">  <span class="comment">//传入具体制造者</span></div><div class="line">  <span class="keyword">var</span> _builder = Builder;</div><div class="line">  <span class="keyword">this</span>.build = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    _builder.buildFrame();</div><div class="line">    _builder.buildEngine();</div><div class="line">    _builder.buildWheel();</div><div class="line">    <span class="keyword">return</span> _builder.buildCar();</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">使用：</div><div class="line"></div><div class="line"><span class="keyword">var</span> builder911 = <span class="keyword">new</span> Builder911();</div><div class="line"><span class="keyword">var</span> director911 = <span class="keyword">new</span> Director(builder911);</div><div class="line"><span class="keyword">var</span> car911 = director911.build();</div><div class="line">car911.check();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>使用场景</p>
+</blockquote>
+<p>需要生成的对象具有复杂的内部结构；需要生成的对象内部属性本身相互依赖。</p>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<p>1.建造者模式的封装性很好。使用建造者模式可以有效的封装变化，在使用建造者模式的场景中，一般产品类和建造者类是比较稳定的，因此，将主要的业务逻辑封装在指导者类中对整体而言可以取得比较好的稳定性。<br>2.建造者模式很容易进行扩展。如果有新的需求，通过实现一个新的建造者类就可以完成。</p>
+<ul>
+<li><h4 id="原型模式-Prototype"><a href="#原型模式-Prototype" class="headerlink" title="原型模式 Prototype"></a>原型模式 Prototype</h4></li>
+</ul>
+<blockquote>
+<p>“四人组”称原型模式是一种基于现有对象模板，通过克隆方式创建对象的模板（《JavaScript设计模式》p70），我们可以认为原型模式是基于原型继承的模式，是一种组合式继承，可以在其中创建对象</p>
+</blockquote>
+<p>上栗子：</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">基类：</div><div class="line">var base = function()&#123;</div><div class="line">  this.name = <span class="string">'base'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">子类：</div><div class="line">var <span class="function"><span class="keyword">sub</span> = <span class="title">Object</span>.<span class="title">create</span></span>(base);</div><div class="line">console.log(<span class="function"><span class="keyword">sub</span>.<span class="title">name</span>)</span>;</div></pre></td></tr></table></figure>
+<p><code>Object.create(prototype,descriptors)</code>:创建一个具有指定原型且可选择性地包含指定属性的对象,实现继承</p>
+<ul>
+<li><h4 id="单例模式-Singleton"><a href="#单例模式-Singleton" class="headerlink" title="单例模式 Singleton"></a>单例模式 Singleton</h4></li>
+</ul>
+<blockquote>
+<p>单例就是保证一个类只有一个实例</p>
+</blockquote>
+<p>简单单例模式:使用对象字面量的方式创建对象</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> singleton = &#123;</div><div class="line">  name : <span class="string">''</span>,</div><div class="line">  age : <span class="string">''</span>,</div><div class="line">  method: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>缺点：全局的资源，公共的数据</p>
+<p>惰性单例模式：通过闭包设置私有变量，延迟初始化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Singleton = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> instantiated;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">/*这里定义单例代码*/</span></div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            publicMethod: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'hello world'</span>);</div><div class="line">            &#125;,</div><div class="line">            publicProperty: <span class="string">'test'</span></div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        getInstance: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (!instantiated) &#123;</div><div class="line">                instantiated = init();</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> instantiated;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>分支单体</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Slington = (<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;  </div><div class="line">    <span class="keyword">var</span> def = <span class="literal">true</span>;</div><div class="line">    <span class="keyword">var</span> More = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">var</span> objA = &#123; <span class="comment">//火狐浏览器  内部的一些配置</span></div><div class="line">            attr1: <span class="string">'ff attr1'</span>,</div><div class="line">            <span class="comment">//属性1</span></div><div class="line">            <span class="comment">//方法1</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">var</span> objB = &#123;  <span class="comment">//ie浏览器 内部的一些配置</span></div><div class="line">            attr2: <span class="string">'ie attr1'</span>,</div><div class="line">            <span class="comment">//属性1</span></div><div class="line">            <span class="comment">//方法1</span></div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> (def) ? <span class="keyword">new</span> More().objA : <span class="keyword">new</span> More().objB;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<h3 id="结构型设计模式-Structural"><a href="#结构型设计模式-Structural" class="headerlink" title="结构型设计模式(Structural)"></a>结构型设计模式(Structural)</h3><blockquote>
+<p>结构型模式关注于对象组成和通常识别的方式实现不同对象直接的关系。</p>
+</blockquote>
+<ul>
+<li><h4 id="适配器模式（Adapter）"><a href="#适配器模式（Adapter）" class="headerlink" title="适配器模式（Adapter）"></a>适配器模式（Adapter）</h4><blockquote>
+<p>适配器模式是将一个对象的方法或者属性转化为客户希望的另外一个对象的方法或属性，适配器模式使得原本由于接口不兼容而不能一起工作的对象可以一起工作(有种偷梁换柱的感觉奥)。速成包装器(wrapper)</p>
+</blockquote>
+<p>上栗子：猫：会走、会叫（miao）;狗：会走、会叫（wang）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//猫</span></div><div class="line"><span class="keyword">var</span> Cat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">Cat.prototype.go=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">Cat.prototype.miao = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'miao'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//狗</span></div><div class="line"><span class="keyword">var</span> Dog = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">Dog.prototype.go=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">Dog.prototype.wang = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'wang'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 如果我们想让狗也实现猫的叫声，就需要写一个新的狗的适配器DogAdapter</span></div><div class="line"><span class="keyword">var</span> DogAdapter = <span class="function"><span class="keyword">function</span>(<span class="params">dog</span>)</span>&#123;</div><div class="line">  Cat.apply(<span class="keyword">this</span>);</div><div class="line">  <span class="keyword">this</span>.dog = dog;</div><div class="line">&#125;</div><div class="line">DogAdapter.prototype = <span class="keyword">new</span> Cat();</div><div class="line">DogAdapter.prototype.miao = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.dog.wang();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//测试</span></div><div class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</div><div class="line"><span class="keyword">var</span> dog = <span class="keyword">new</span> Dog();</div><div class="line"><span class="keyword">var</span> dogAdapter = <span class="keyword">new</span> DogAdapter(dog);</div><div class="line"><span class="comment">//原始各自的行为</span></div><div class="line">cat.miao();<span class="comment">//miao</span></div><div class="line">dog.wang();<span class="comment">//wang</span></div><div class="line"><span class="comment">//狗调用猫的叫声，发自己的声音</span></div><div class="line">dogAdapter.miao();<span class="comment">//wang</span></div></pre></td></tr></table></figure>
+</li>
+<li><h4 id="桥接模式Bridge"><a href="#桥接模式Bridge" class="headerlink" title="桥接模式Bridge"></a>桥接模式Bridge</h4><blockquote>
+<p>将抽象部分与她的实现部分分离，是他们可以独立的变化</p>
+</blockquote>
+<p>这样说可能有点抽象，下面我们用代码说话，上栗子:</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//常用的ajax请求</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sendInfo</span><span class="params">(element)</span></span>&#123;</div><div class="line">  <span class="keyword">var</span> id = element.id;</div><div class="line">  ajax( <span class="string">"GET"</span>,<span class="string">"info.json?id="</span>+id, <span class="function"><span class="keyword">function</span><span class="params">( result )</span></span>&#123;</div><div class="line">         ...</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"><span class="comment">//很多时候我们使用sendInfo方法，每个方法中都有ajax请求，这时你会发现大量重复的代码(当你的代码中超过2处重复的代码时，你就要考虑重构你的代码了,单一职责原则)</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sendInfo</span><span class="params">(elelment)</span></span>&#123;</div><div class="line">  <span class="keyword">var</span> id = element.id;</div><div class="line">  <span class="keyword">callback</span> = <span class="function"><span class="keyword">function</span><span class="params">(result)</span></span>&#123;&#125;</div><div class="line">  ajaxBrige(id,<span class="keyword">callback</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajaxBrige</span><span class="params">(id,callback)</span></span>&#123;</div><div class="line">    <span class="keyword">var</span> id = element.id;</div><div class="line">    ajax( <span class="string">"GET"</span>,<span class="string">"info.json?id="</span>+id, <span class="function"><span class="keyword">function</span><span class="params">( result )</span></span>&#123;</div><div class="line">         <span class="keyword">callback</span>(reslut)</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>优点<ol>
+<li>接口和实现隔离，实现单一责任</li>
+<li>提高可扩充性</li>
+<li>实现的细节对用户隐藏</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><h4 id="组合模式（Composite）"><a href="#组合模式（Composite）" class="headerlink" title="组合模式（Composite）"></a>组合模式（Composite）</h4><blockquote>
+<p>将对象组合成树形结构以表示整体-部分的管理，组合模式中只有两种类型对象，组合对象，叶子对象</p>
+</blockquote>
+<p>上栗子：</p>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//组合对象</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ImagesStore</span>(<span class="params"> id </span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.children = [];</div><div class="line">    <span class="keyword">this</span>.element = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</div><div class="line">    <span class="keyword">this</span>.element.id = id;</div><div class="line">    <span class="keyword">this</span>.element.className = <span class="string">"imgs-store"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ImagesStore.prototype = &#123;</div><div class="line">    constructor ： ImagesStore，</div><div class="line"></div><div class="line">    <span class="attribute">add</span> : <span class="function"><span class="keyword">function</span>(<span class="params"> child </span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.children.push( child );</div><div class="line">        <span class="keyword">this</span>.element.appendChild( child.getElement() );</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attribute">remove</span> : <span class="function"><span class="keyword">function</span>(<span class="params"> child </span>)</span>&#123;</div><div class="line">        <span class="keyword">for</span>( <span class="built_in">var</span> node, i=<span class="number">0</span>; node = <span class="keyword">this</span>.getChild(i); i++ )&#123;</div><div class="line">            <span class="keyword">if</span>( node === child )&#123;</div><div class="line">                <span class="keyword">this</span>.children.splice( i, <span class="number">1</span> );</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">this</span>.element.removeChild( child.getElement() );</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attribute">getChild</span> : <span class="function"><span class="keyword">function</span>(<span class="params"> i </span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.children[i];</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attribute">show</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.element.style.display = <span class="string">''</span>;</div><div class="line">        <span class="keyword">for</span>( <span class="built_in">var</span> node, i=<span class="number">0</span>; node = <span class="keyword">this</span>.getChild(i); i++ )&#123;</div><div class="line">            node.show();</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attribute">hide</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">for</span>( <span class="built_in">var</span> node, i=<span class="number">0</span>; node = <span class="keyword">this</span>.getChild(i); i++ )&#123;</div><div class="line">            node.hide();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>.element.style.display = <span class="string">'none'</span>;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attribute">getElement</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.element;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//叶子对象</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ImageItem</span>(<span class="params"> src </span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.element = <span class="built_in">document</span>.createElement(<span class="string">"img"</span>);</div><div class="line">    <span class="keyword">this</span>.element.src = src;</div><div class="line">    <span class="keyword">this</span>.element.className = <span class="string">"img-item"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ImageItem.prototype = &#123;</div><div class="line">    constructor ： ImagesStore，</div><div class="line"></div><div class="line">    <span class="attribute">add</span> : <span class="function"><span class="keyword">function</span>(<span class="params"> child </span>)</span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"this is image object, no add function"</span>);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attribute">remove</span> : <span class="function"><span class="keyword">function</span>(<span class="params"> child </span>)</span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"this is image object, no remove function"</span>);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attribute">getChild</span> : <span class="function"><span class="keyword">function</span>(<span class="params"> i </span>)</span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"this is image object, no getChild function"</span>);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attribute">show</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.element.style.display = <span class="string">''</span>;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attribute">hide</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.element.style.display = <span class="string">'none'</span>;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attribute">getElement</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.element;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//组合</span></div><div class="line"><span class="built_in">var</span> store = <span class="keyword">new</span> ImagesStore(<span class="string">"first"</span>);</div><div class="line">store.add( <span class="keyword">new</span> ImageItem(<span class="string">"/img/1.jpg"</span>) );</div><div class="line">store.add( <span class="keyword">new</span> ImageItem(<span class="string">"/img/2.jpg"</span>) );</div></pre></td></tr></table></figure>
+<blockquote>
+<p>使用场景</p>
+</blockquote>
+<ul>
+<li>你想表示对象的部分-整体层次结构时；</li>
+<li>你希望用户忽略组合对象和单个对象的不同，用户将统一地使用组合结构中的所有对象（方法）</li>
+</ul>
+</li>
+<li><h4 id="装饰器模式（Decorator）"><a href="#装饰器模式（Decorator）" class="headerlink" title="装饰器模式（Decorator）"></a>装饰器模式（Decorator）</h4><blockquote>
+<p>在不改变原类和继承的情况下动态扩展对象功能，通过包装一个对象来实现一个新的具有原对象相同接口的新的对象。</p>
+</blockquote>
+<p>在没有使用模式之前，对于一个js小白来讲，创建一个父类，通过不同的子类来实现不同的功能，这也是面向对象的思想，思路是正确的，可是你有没有想过后期的维护呢？如果功能少还好，功能很多就要写很多个子类，同时如果需要扩展也要重新定义子类</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//父类</div><div class="line"><span class="keyword">var</span> <span class="type">Car</span> = function()&#123;&#125;</div><div class="line">//不同公共的子类子类</div><div class="line"><span class="keyword">var</span> <span class="type">CarWithPowerLocks</span> = function() <span class="meta">&#123;...&#125;</span>;</div><div class="line"><span class="keyword">var</span> <span class="type">CarWithPowerWindows</span> = function() <span class="meta">&#123;...&#125;</span>;</div><div class="line"><span class="keyword">var</span> <span class="type">CarWithPowerLocksAndPowerWindows</span> = function() <span class="meta">&#123;...&#125;</span>;</div><div class="line"><span class="keyword">var</span> <span class="type">CarWithAC</span> = function() <span class="meta">&#123;...&#125;</span>;</div><div class="line"><span class="keyword">var</span> <span class="type">CarWithACAndPowerLocks</span> = function() <span class="meta">&#123;...&#125;</span>;</div><div class="line"><span class="keyword">var</span> <span class="type">CarWithACAndPowerWindows</span> = function() <span class="meta">&#123;...&#125;</span>;</div><div class="line"><span class="keyword">var</span> <span class="type">CarWithACAndPowerLocksAndPowerWindows</span> = function() <span class="meta">&#123;...&#125;</span>;</div></pre></td></tr></table></figure>
+<p>下面使用装饰者模式来拯救你的不可维护的代码吧</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建一个基类Car</span></div><div class="line"><span class="keyword">var</span> Car = functionn()&#123;&#125;</div><div class="line">Car.prortype=&#123;</div><div class="line">  start: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'伴随着引擎的轰鸣声，车子发动了！'</span>);</div><div class="line">    &#125;,</div><div class="line">    drive: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'走起!'</span>);</div><div class="line">    &#125;,</div><div class="line">    getPrice: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">11000.00</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//创建装饰者抽象类</span></div><div class="line"><span class="comment">// 你需要传递一个Car（或者是CarDecorator）才能为它添加功能。</span></div><div class="line"><span class="keyword">var</span> CarDecorator = <span class="function"><span class="keyword">function</span>(<span class="params">car</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.car = car;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// CarDecorator 实现相同的接口</span></div><div class="line">CarDecorator.prototype = &#123;</div><div class="line">    start: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.car.start();</div><div class="line">    &#125;,</div><div class="line">    drive: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.car.drive();</div><div class="line">    &#125;,</div><div class="line">    getPrice: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.car.getPrice();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//具体的装饰者类</span></div><div class="line"><span class="keyword">var</span> PowerLocksDecorator = <span class="function"><span class="keyword">function</span>(<span class="params">car</span>) </span>&#123;</div><div class="line">    <span class="comment">// 这是JavaScript里调用父类构造函数的方式</span></div><div class="line">    CarDecorator.call(<span class="keyword">this</span>, car);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'装配：添加动力锁'</span>);</div><div class="line">&#125;</div><div class="line">PowerLocksDecorator.prototype = <span class="keyword">new</span> CarDecorator();</div><div class="line">PowerLocksDecorator.prototype.drive = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// 你可以这么写</span></div><div class="line">    <span class="keyword">this</span>.car.drive();</div><div class="line">    <span class="comment">// 或者你可以调用父类的drive方法：</span></div><div class="line">    <span class="comment">// CarDecorator.prototype.drive.call(this);</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'车门自动上锁'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> PowerWindowsDecorator = <span class="function"><span class="keyword">function</span>(<span class="params">car</span>) </span>&#123;</div><div class="line">    CarDecorator.call(<span class="keyword">this</span>, car);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'装配：添加动力表盘'</span>);</div><div class="line">&#125;</div><div class="line">PowerWindowsDecorator.prototype = <span class="keyword">new</span> CarDecorator();</div><div class="line"></div><div class="line"><span class="keyword">var</span> ACDecorator = <span class="function"><span class="keyword">function</span>(<span class="params">car</span>) </span>&#123;</div><div class="line">    CarDecorator.call(<span class="keyword">this</span>, car);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'装配：添加空调'</span>);</div><div class="line">&#125;</div><div class="line">ACDecorator.prototype = <span class="keyword">new</span> CarDecorator();</div><div class="line">ACDecorator.prototype.start = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.car.start();</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'冷风吹起来'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样我们每次新增功能，都可以确保基类和装饰类不改变，只需要通过具体的装饰类来扩展功能就好。感觉和组合模式很像，组合模式侧重部分-整体，将部分注入到整体中，而装饰者模式是通过具体的装饰者类实现角色的基本功能并添加额外功能</p>
+<p>看完栗子，来总结一下：</p>
+<blockquote>
+<p>装饰者模式的几大要素</p>
+</blockquote>
+<ol>
+<li>角色（Component）:定义了接口，规范准备接受的对象（Car）</li>
+<li>装饰角色（Decorator）：持有角色（Component）的实例，定义与角色一致的接口（CarDecorator）</li>
+<li>具体装饰着（PowerLocksDecorator）:负责给角色添加附加功能</li>
+</ol>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<ol>
+<li>装饰类和被装饰类可以独立发展，不会相互耦合</li>
+<li>装饰模式是继承的一个替代模式，装饰模式可以动态扩展一个实现类的功能。就增加功能来说，装饰器模式相比生成子类更为灵活。</li>
+</ol>
+<blockquote>
+<p>使用场景</p>
+</blockquote>
+<ol>
+<li>扩展一个类的功能。</li>
+<li>动态增加功能，动态撤销。</li>
+</ol>
+<blockquote>
+<p>使用了 开闭原则</p>
+</blockquote>
+<p><a href="http://www.codingserf.com/index.php/2015/05/javascript-design-patterns-decorator/" target="_blank" rel="external">这里讲解很精彩</a></p>
+</li>
+<li><h4 id="外观模式（Facede）"><a href="#外观模式（Facede）" class="headerlink" title="外观模式（Facede）"></a>外观模式（Facede）</h4><blockquote>
+<p>门面模式本质是实现一个简单的统一接口来处理对各个子系统接口的处理和调用</p>
+</blockquote>
+<p>这里我们来回忆一下之前说过的桥接模式，两者感觉差不多，实际侧重点并不相同。桥接模式侧重于各个类相互独立，而外观模式侧重于接口和内部实现的分离，我们只需要知道怎样调用接口无需知道内部的实现过程。</p>
+<p>上栗子：模拟电脑启动，假设电脑启动顺序：启动CPU，启动内存，启动硬盘，加载数据等。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 外观模式     </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CPU</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.startup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"启动CPU"</span>);</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Memory</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.startup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"启动Memory"</span>);</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Disk</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.startup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"启动Disk"</span>);</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Computer</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> _cpu, _memory, _disk;</div><div class="line">  _cpu = <span class="keyword">new</span> CPU();</div><div class="line">  _memory = <span class="keyword">new</span> Memory();</div><div class="line">  _disk = <span class="keyword">new</span> Disk();</div><div class="line">  <span class="keyword">this</span>.start = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    _cpu.startup();</div><div class="line">    _memory.startup();</div><div class="line">    _disk.startup();</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">computer = <span class="keyword">new</span> Computer();</div><div class="line">computer.start();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<p>1.减少系统相互依赖。<br>2.提高灵活性。<br>2.提高了安全性。</p>
+<blockquote>
+<p>使用场景</p>
+</blockquote>
+<p>1.为复杂的模块或子系统提供外界访问的模块。<br>2.客户程序与抽象类的实现部分之间存在着很大的依赖性。引入facade 将这个子系统与客户以及其他的子系统分离，可以提高子系统的独立性和可移植性。</p>
+</li>
+<li><h4 id="享元模式（Flyweight）"><a href="#享元模式（Flyweight）" class="headerlink" title="享元模式（Flyweight）"></a>享元模式（Flyweight）</h4><p>​</p>
+</li>
+<li><h4 id="代理模式（Proxy）"><a href="#代理模式（Proxy）" class="headerlink" title="代理模式（Proxy）"></a>代理模式（Proxy）</h4></li>
+</ul>
+<h3 id="行为设计模式（Behavioral）"><a href="#行为设计模式（Behavioral）" class="headerlink" title="行为设计模式（Behavioral）"></a>行为设计模式（Behavioral）</h3><ul>
+<li><h4 id="解释器（Interpreter）"><a href="#解释器（Interpreter）" class="headerlink" title="解释器（Interpreter）"></a>解释器（Interpreter）</h4></li>
+<li><h4 id="模板方法（Template-Method）"><a href="#模板方法（Template-Method）" class="headerlink" title="模板方法（Template Method）"></a>模板方法（Template Method）</h4></li>
+<li><h4 id="职责链（Responsibility）"><a href="#职责链（Responsibility）" class="headerlink" title="职责链（Responsibility）"></a>职责链（Responsibility）</h4></li>
+<li><h4 id="命令（Command）"><a href="#命令（Command）" class="headerlink" title="命令（Command）"></a>命令（Command）</h4></li>
+<li><h4 id="迭代器（Iterator）"><a href="#迭代器（Iterator）" class="headerlink" title="迭代器（Iterator）"></a>迭代器（Iterator）</h4></li>
+<li><h4 id="中介者（Mediator）"><a href="#中介者（Mediator）" class="headerlink" title="中介者（Mediator）"></a>中介者（Mediator）</h4></li>
+<li><h4 id="观察者（Observe）"><a href="#观察者（Observe）" class="headerlink" title="观察者（Observe）"></a>观察者（Observe）</h4></li>
+<li><h4 id="状态（State）"><a href="#状态（State）" class="headerlink" title="状态（State）"></a>状态（State）</h4></li>
+<li><h4 id="策略（Strategy）"><a href="#策略（Strategy）" class="headerlink" title="策略（Strategy）"></a>策略（Strategy）</h4></li>
+<li><h4 id="访问者（Visitor）"><a href="#访问者（Visitor）" class="headerlink" title="访问者（Visitor）"></a>访问者（Visitor）</h4></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/09/08/JavaScript设计模式/">JavaScript设计模式</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 盐粒儿 的个人博客">盐粒儿</a></p>
+        <p><span>发布时间:</span>2016年09月08日 - 00时17分</p>
+        <p><span>最后更新:</span>2016年11月24日 - 19时55分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/08/JavaScript设计模式/" title="JavaScript设计模式">http://yoursite.com/2016/09/08/JavaScript设计模式/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/09/08/JavaScript设计模式/　　作者: 盐粒儿" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/09/13/Angular-popups/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Angular-popups
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/01/bookmarks使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">bookmarks使用</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript设计模式（Design-pattern）"><span class="toc-number">1.</span> <span class="toc-text">JavaScript设计模式（Design pattern）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设计模式六大原则"><span class="toc-number">1.1.</span> <span class="toc-text">设计模式六大原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计模式分类"><span class="toc-number">1.2.</span> <span class="toc-text">设计模式分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建型设计模式Creational"><span class="toc-number">1.2.1.</span> <span class="toc-text">创建型设计模式Creational</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#工厂方法：Factory-Method"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">工厂方法：Factory Method</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#抽象工厂：Abstract-Factory"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">抽象工厂：Abstract Factory</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#建造者：Builder"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">建造者：Builder</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#原型模式-Prototype"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">原型模式 Prototype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单例模式-Singleton"><span class="toc-number">1.2.1.5.</span> <span class="toc-text">单例模式 Singleton</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结构型设计模式-Structural"><span class="toc-number">1.2.2.</span> <span class="toc-text">结构型设计模式(Structural)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#适配器模式（Adapter）"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">适配器模式（Adapter）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#桥接模式Bridge"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">桥接模式Bridge</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组合模式（Composite）"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">组合模式（Composite）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#装饰器模式（Decorator）"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">装饰器模式（Decorator）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#外观模式（Facede）"><span class="toc-number">1.2.2.5.</span> <span class="toc-text">外观模式（Facede）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#享元模式（Flyweight）"><span class="toc-number">1.2.2.6.</span> <span class="toc-text">享元模式（Flyweight）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代理模式（Proxy）"><span class="toc-number">1.2.2.7.</span> <span class="toc-text">代理模式（Proxy）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#行为设计模式（Behavioral）"><span class="toc-number">1.2.3.</span> <span class="toc-text">行为设计模式（Behavioral）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解释器（Interpreter）"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">解释器（Interpreter）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模板方法（Template-Method）"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">模板方法（Template Method）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#职责链（Responsibility）"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">职责链（Responsibility）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命令（Command）"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">命令（Command）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#迭代器（Iterator）"><span class="toc-number">1.2.3.5.</span> <span class="toc-text">迭代器（Iterator）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#中介者（Mediator）"><span class="toc-number">1.2.3.6.</span> <span class="toc-text">中介者（Mediator）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#观察者（Observe）"><span class="toc-number">1.2.3.7.</span> <span class="toc-text">观察者（Observe）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态（State）"><span class="toc-number">1.2.3.8.</span> <span class="toc-text">状态（State）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#策略（Strategy）"><span class="toc-number">1.2.3.9.</span> <span class="toc-text">策略（Strategy）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#访问者（Visitor）"><span class="toc-number">1.2.3.10.</span> <span class="toc-text">访问者（Visitor）</span></a></li></ol></li></ol></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/09/08/JavaScript设计模式/" data-title="JavaScript设计模式" data-url="http://yoursite.com/2016/09/08/JavaScript设计模式/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/09/13/Angular-popups/" title="上一篇: Angular-popups">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/09/01/bookmarks使用/" title="下一篇: bookmarks使用">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/24/React+Redux/">React+Redux</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/24/React组件通信/">React组件通信</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/React踩过的坑/">React踩过的坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/回归博客/">再次回来</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/13/Angular-popups/">Angular-popups</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/08/JavaScript设计模式/">JavaScript设计模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/01/bookmarks使用/">bookmarks使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/31/javascriptTemplate/">javascript模板引擎</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/31/使用hexo-GitHub搭建自己的博客/">使用hexo+GitHub搭建自己的博客</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 盐粒儿
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
