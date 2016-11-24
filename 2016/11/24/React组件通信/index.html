@@ -84,16 +84,22 @@
 
 
 
-<meta name="description" content="React实现组件直接通信场景：一个显示文本的组件Hello，一个点击按钮组件Change，显示文本组件可以通过点击事件替换文本，点击按钮组件可以通过点击将显示文本组件的文本替换掉，两个组件直接是怎样通信的呢？">
+<meta name="description" content="React实现组件直接通信场景：一个显示文本的组件Hello，一个点击按钮组件Change，显示文本组件可以通过点击事件替换文本，点击按钮组件可以通过点击将显示文本组件的文本替换掉，两个组件直接是怎样通信的呢？
+代码：不考虑Change组件，我们会这样实现Hello组件
+123456789101112131415161718class Hello extends React.Component">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React组件通信">
 <meta property="og:url" content="http://yoursite.com/2016/11/24/React组件通信/index.html">
 <meta property="og:site_name" content="有一个姑娘在CODING">
-<meta property="og:description" content="React实现组件直接通信场景：一个显示文本的组件Hello，一个点击按钮组件Change，显示文本组件可以通过点击事件替换文本，点击按钮组件可以通过点击将显示文本组件的文本替换掉，两个组件直接是怎样通信的呢？">
-<meta property="og:updated_time" content="2016-11-24T06:24:43.000Z">
+<meta property="og:description" content="React实现组件直接通信场景：一个显示文本的组件Hello，一个点击按钮组件Change，显示文本组件可以通过点击事件替换文本，点击按钮组件可以通过点击将显示文本组件的文本替换掉，两个组件直接是怎样通信的呢？
+代码：不考虑Change组件，我们会这样实现Hello组件
+123456789101112131415161718class Hello extends React.Component">
+<meta property="og:updated_time" content="2016-11-24T11:53:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React组件通信">
-<meta name="twitter:description" content="React实现组件直接通信场景：一个显示文本的组件Hello，一个点击按钮组件Change，显示文本组件可以通过点击事件替换文本，点击按钮组件可以通过点击将显示文本组件的文本替换掉，两个组件直接是怎样通信的呢？">
+<meta name="twitter:description" content="React实现组件直接通信场景：一个显示文本的组件Hello，一个点击按钮组件Change，显示文本组件可以通过点击事件替换文本，点击按钮组件可以通过点击将显示文本组件的文本替换掉，两个组件直接是怎样通信的呢？
+代码：不考虑Change组件，我们会这样实现Hello组件
+123456789101112131415161718class Hello extends React.Component">
 
 
 
@@ -113,7 +119,7 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: {"per_page":10},
+      hits: {"per_page":5},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
@@ -359,8 +365,8 @@
       
 
       
-        <h3 id="React实现组件直接通信"><a href="#React实现组件直接通信" class="headerlink" title="React实现组件直接通信"></a>React实现组件直接通信</h3><p>场景：一个显示文本的组件Hello，一个点击按钮组件Change，显示文本组件可以通过点击事件替换文本，点击按钮组件可以通过点击将显示文本组件的文本替换掉，两个组件直接是怎样通信的呢？</p>
-<a id="more"></a>
+        <a id="more"></a>
+<h3 id="React实现组件直接通信"><a href="#React实现组件直接通信" class="headerlink" title="React实现组件直接通信"></a>React实现组件直接通信</h3><p>场景：一个显示文本的组件Hello，一个点击按钮组件Change，显示文本组件可以通过点击事件替换文本，点击按钮组件可以通过点击将显示文本组件的文本替换掉，两个组件直接是怎样通信的呢？</p>
 <p>代码：不考虑Change组件，我们会这样实现Hello组件</p>
 <figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props)</div><div class="line">        <span class="keyword">this</span>.state=&#123;</div><div class="line">          text:<span class="symbol">'hell</span>o'</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    handleClick=()=&gt;&#123;</div><div class="line">        let text = <span class="keyword">this</span>.state.text;</div><div class="line">        let newtext= (text==<span class="symbol">'hell</span>o' )? '在coding的姑娘':<span class="symbol">'hell</span>o'</div><div class="line">        <span class="keyword">this</span>.setState(&#123;text:newtext&#125;)</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span>(</div><div class="line">            &lt;h1 onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;&#123;<span class="keyword">this</span>.state.text&#125;&lt;/h1&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>但是现在，我们要通过另外一个组件来更改text，这就需要一个父组件App来里text，Change组件和Hello组件直接的通信就要利用父组件的props</p>
