@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="React,Redux," />
 
 
 
@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="纯React实现组件直接通信场景：一个显示文本的组件Hello，一个点击按钮组件Change，显示文本组件可以通过点击事件替换文本，点击按钮组件可以通过点击将显示文本组件的文本替换掉，两个组件直接是怎样通信的呢？">
+<meta name="description" content="Redux+React实现上一篇写了一个react实现组件直接的通信，随着react的流行，越来越多的前端爱好者开始使用它，作为前端小白，我也跟着潮流来了，使用react构建大型应用，必不可少的就是一个好的前端架构来管理你的数据，例如flux、redux,这里我写了一个简单的redux工作流程，仅仅是为了自己了解redux的工作机制，大神请绕过~~">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React-Redux">
-<meta property="og:url" content="http://yoursite.com/2016/11/24/React-Redux/index.html">
+<meta property="og:title" content="React+Redux">
+<meta property="og:url" content="http://yoursite.com/2016/11/24/React+Redux/index.html">
 <meta property="og:site_name" content="有一个姑娘在CODING">
-<meta property="og:description" content="纯React实现组件直接通信场景：一个显示文本的组件Hello，一个点击按钮组件Change，显示文本组件可以通过点击事件替换文本，点击按钮组件可以通过点击将显示文本组件的文本替换掉，两个组件直接是怎样通信的呢？">
+<meta property="og:description" content="Redux+React实现上一篇写了一个react实现组件直接的通信，随着react的流行，越来越多的前端爱好者开始使用它，作为前端小白，我也跟着潮流来了，使用react构建大型应用，必不可少的就是一个好的前端架构来管理你的数据，例如flux、redux,这里我写了一个简单的redux工作流程，仅仅是为了自己了解redux的工作机制，大神请绕过~~">
 <meta property="og:image" content="http://qiutc.me/img/redux.jpeg">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016091802.jpg">
-<meta property="og:updated_time" content="2016-11-23T16:48:53.000Z">
+<meta property="og:updated_time" content="2016-11-24T06:30:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React-Redux">
-<meta name="twitter:description" content="纯React实现组件直接通信场景：一个显示文本的组件Hello，一个点击按钮组件Change，显示文本组件可以通过点击事件替换文本，点击按钮组件可以通过点击将显示文本组件的文本替换掉，两个组件直接是怎样通信的呢？">
+<meta name="twitter:title" content="React+Redux">
+<meta name="twitter:description" content="Redux+React实现上一篇写了一个react实现组件直接的通信，随着react的流行，越来越多的前端爱好者开始使用它，作为前端小白，我也跟着潮流来了，使用react构建大型应用，必不可少的就是一个好的前端架构来管理你的数据，例如flux、redux,这里我写了一个简单的redux工作流程，仅仅是为了自己了解redux的工作机制，大神请绕过~~">
 <meta name="twitter:image" content="http://qiutc.me/img/redux.jpeg">
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/24/React-Redux/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/24/React+Redux/"/>
 
 
 
 
 
-  <title> React-Redux | 有一个姑娘在CODING </title>
+  <title> React+Redux | 有一个姑娘在CODING </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +264,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/24/React-Redux/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/24/React+Redux/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="盐粒儿">
@@ -288,7 +288,7 @@
             
             
               
-                React-Redux
+                React+Redux
               
             
           </h1>
@@ -301,7 +301,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-24T00:43:40+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-24T14:25:08+08:00">
                 2016-11-24
               </time>
             
@@ -320,8 +320,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Redux/" itemprop="url" rel="index">
-                    <span itemprop="name">React Redux</span>
+                  <a href="/categories/Redux/" itemprop="url" rel="index">
+                    <span itemprop="name">Redux</span>
                   </a>
                 </span>
 
@@ -335,8 +335,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/11/24/React-Redux/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/24/React-Redux/" itemprop="commentCount"></span>
+                <a href="/2016/11/24/React+Redux/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/24/React+Redux/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -362,16 +362,30 @@
       
 
       
-        <h3 id="纯React实现组件直接通信"><a href="#纯React实现组件直接通信" class="headerlink" title="纯React实现组件直接通信"></a>纯React实现组件直接通信</h3><p>场景：一个显示文本的组件Hello，一个点击按钮组件Change，显示文本组件可以通过点击事件替换文本，点击按钮组件可以通过点击将显示文本组件的文本替换掉，两个组件直接是怎样通信的呢？</p>
+        <h3 id="Redux-React实现"><a href="#Redux-React实现" class="headerlink" title="Redux+React实现"></a>Redux+React实现</h3><p>上一篇写了一个react实现组件直接的通信，随着react的流行，越来越多的前端爱好者开始使用它，作为前端小白，我也跟着潮流来了，使用react构建大型应用，必不可少的就是一个好的前端架构来管理你的数据，例如flux、redux,这里我写了一个简单的redux工作流程，仅仅是为了自己了解redux的工作机制，大神请绕过~~</p>
 <a id="more"></a>
-<p>代码：不考虑Change组件，我们会这样实现Hello组件</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props)</div><div class="line">        <span class="keyword">this</span>.state=&#123;</div><div class="line">          text:<span class="symbol">'hell</span>o'</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    handleClick=()=&gt;&#123;</div><div class="line">        let text = <span class="keyword">this</span>.state.text;</div><div class="line">        let newtext= (text==<span class="symbol">'hell</span>o' )? '在coding的姑娘':<span class="symbol">'hell</span>o'</div><div class="line">        <span class="keyword">this</span>.setState(&#123;text:newtext&#125;)</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span>(</div><div class="line">            &lt;h1 onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;&#123;<span class="keyword">this</span>.state.text&#125;&lt;/h1&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>但是现在，我们要通过另外一个组件来更改text，这就需要一个父组件App来里text，Change组件和Hello组件直接的通信就要利用父组件的props</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Hello组件</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props)</div><div class="line">    &#125;</div><div class="line">    handleClick=()=&gt;&#123;</div><div class="line">        <span class="keyword">this</span>.props.onClickText()</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span>(</div><div class="line">            &lt;h1 onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;&#123;<span class="keyword">this</span>.props.text&#125;&lt;/h1&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//Change组件</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Change</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props)</div><div class="line">    &#125;</div><div class="line">    handleClick= ()=&gt;&#123;</div><div class="line">        <span class="keyword">this</span>.props.onClickButton()</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span>(</div><div class="line">            &lt;button onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;点我&lt;/button&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//App组件</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props)</div><div class="line">        <span class="keyword">this</span>.state=&#123;</div><div class="line">            text:<span class="symbol">'hell</span>o'</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    handleClickText=()=&gt;&#123;</div><div class="line">        let text = <span class="keyword">this</span>.state.text;</div><div class="line">        let newtext= (text==<span class="symbol">'hell</span>o' )? '在coding的姑娘':<span class="symbol">'hell</span>o'</div><div class="line">        <span class="keyword">this</span>.setState(&#123;text:newtext&#125;)</div><div class="line">    &#125;</div><div class="line">    handleClickButton=()=&gt;&#123;</div><div class="line">        <span class="keyword">this</span>.setState(&#123;text:'姑娘你点击了按钮'&#125;)</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span>(</div><div class="line">            &lt;div&gt;</div><div class="line">                &lt;<span class="type">Hello</span> text=&#123;<span class="keyword">this</span>.state.text&#125; onClickText=&#123;<span class="keyword">this</span>.handleClickText&#125;/&gt;</div><div class="line">                &lt;<span class="type">Change</span> onClickButton=&#123;<span class="keyword">this</span>.handleClickButton&#125;/&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Redux-React实现"><a href="#Redux-React实现" class="headerlink" title="Redux+React实现"></a>Redux+React实现</h3><p><a href="http://cn.redux.js.org/docs/basics/Actions.html" target="_blank" rel="external">redux中文文档</a></p>
+<p><a href="http://cn.redux.js.org/docs/basics/Actions.html" target="_blank" rel="external">redux中文文档</a></p>
 <p><a href="http://redux.js.org/" target="_blank" rel="external">redux英文文档</a></p>
 <p><img src="http://qiutc.me/img/redux.jpeg" alt=""></p>
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016091802.jpg" alt=""></p>
+<p>从图中可以看出 react component的改变是通过store来驱动的，我们从view层看代码结构然后依次类推</p>
+<p>index.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">import</span> &#123;createStore,&#125; <span class="keyword">from</span> <span class="string">'redux'</span></div><div class="line"> <span class="keyword">import</span> reducers <span class="keyword">from</span> <span class="string">'./reducers/reducers.js'</span></div><div class="line"> <span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span></div><div class="line"> <span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"> <span class="keyword">import</span> &#123; Provider&#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"> <span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./components/app.jsx'</span></div><div class="line"></div><div class="line"> <span class="keyword">let</span> store = createStore(reducers)</div><div class="line"></div><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Index</span>  <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span>(</div><div class="line">            <span class="xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></div><div class="line">                <span class="tag">&lt;<span class="name">App</span>/&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></div><div class="line">        )</div><div class="line">    &#125;</div><div class="line"> &#125;</div><div class="line"></div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Index</span>/&gt;</span></span>,<span class="built_in">document</span>.getElementById(<span class="string">'root'</span>))</div></pre></td></tr></table></figure>
+<h4 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a>Provider</h4><ul>
+<li>Provider是中间件，他是在原有 App Container 上面再包一层，他的作用就是接收 store 里面的 store 作为 props，将store放在context里，给下面的connect用的。</li>
+<li>我们看到引入了一个reducers ，下面看看这个是怎么实现的</li>
+</ul>
+<h4 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h4><p> reduces.js</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123;CLICK_TEXT,CLICK_BUTTON&#125; from <span class="string">'../actions/actions.js'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="built_in">default</span> function myApp(state=&#123;<span class="built_in">text</span>:<span class="string">"Hello"</span>&#125;,action)&#123;</div><div class="line">    <span class="built_in">switch</span> (action.type) &#123;</div><div class="line">        <span class="built_in">case</span> CLICK_TEXT:</div><div class="line">            <span class="built_in">return</span> &#123;</div><div class="line">                <span class="built_in">text</span>:state.<span class="built_in">text</span>==<span class="string">'Hello'</span>?<span class="string">'在coding的姑娘'</span>:<span class="string">'Hello'</span></div><div class="line">            &#125;</div><div class="line">        <span class="built_in">case</span> CLICK_BUTTON:</div><div class="line">            <span class="built_in">return</span>&#123;</div><div class="line">                <span class="built_in">text</span>:<span class="string">'有一个姑娘在coding'</span></div><div class="line">            &#125;</div><div class="line"></div><div class="line">        <span class="built_in">default</span>:</div><div class="line">            <span class="built_in">return</span> state</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>action 只是说明了要去做什么，和做这件事情需要的参数值。<br>具体去改变 store 中的 state 是由 reducer 来做的。<br>reducer 其实是一个包含 switch 的函数，前面不是说组件触发的 action 会传递到 reducer，reducer 接收这个参数 action，他通过 switch(action.type) 然后做不同操作，前面说了，这个 type 是指令的标识，reducer 根据这个标识来作出不同的操作。<br>这个操作是什么呢？<br>reducer 还接收另一个参数 state，这个是旧的 state。从 action 里面还可以获取到做这个操作需要的 参数值。<br>这个操作其实就是对原有的 state 和 从 action 中的到的值，来进行操作（结合，删除，…）然后返回一个 新的 state 到 store。</p>
+<h4 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h4><p>在看actions.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> CLICK_TEXT =<span class="string">'CLICK_TEXT'</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> CLICK_BUTTON = <span class="string">'CLICK_BUTTON'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">clickText</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span>&#123;</div><div class="line">        type:CLICK_TEXT,</div><div class="line">        text</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">clickButton</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span>&#123;</div><div class="line">        type:CLICK_BUTTON</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>action 可以理解为一种指令，store 数据的唯一由来就是 action，action 是一个对象，它需要至少一个元素，type，type 是这个指令的唯一标识，其它元素是传送这个指令的 state 值</p>
+<p>最后看容器组件是怎样把视图和行为结合在一起的</p>
+<p>App.js</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="type">React</span> from <span class="symbol">'reac</span>t'</div><div class="line"><span class="keyword">import</span> &#123;createStore,bindActionCreators&#125;  from <span class="symbol">'redu</span>x'</div><div class="line"><span class="keyword">import</span> &#123; <span class="type">Provider</span>,connect&#125; from <span class="symbol">'react</span>-redux'</div><div class="line"><span class="keyword">import</span> &#123;clickText,clickButton&#125; from '../actions/actions.js'</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props)</div><div class="line">    &#125;</div><div class="line">    handleClick=()=&gt;&#123;</div><div class="line">        <span class="keyword">this</span>.props.actions.clickText()</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span>(</div><div class="line">            &lt;h1 onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;&#123;<span class="keyword">this</span>.props.text&#125;&lt;/h1&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Change</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    constructor(props)&#123;</div><div class="line">        <span class="keyword">super</span>(props)</div><div class="line">    &#125;</div><div class="line">    handleClick=()=&gt;&#123;</div><div class="line">        <span class="keyword">this</span>.props.actions.clickButton()</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span>(</div><div class="line">            &lt;button onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;点我看看&lt;/button&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props)</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        const &#123;actions,text&#125; = <span class="keyword">this</span>.props</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;div&gt;</div><div class="line">                &lt;<span class="type">Hello</span> actions=&#123;actions&#125; text=&#123;text&#125;/&gt;</div><div class="line">                &lt;<span class="type">Change</span> actions=&#123;actions&#125;/&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function mapStateToProps(state)&#123;</div><div class="line">    <span class="keyword">return</span> &#123;text:state.text&#125;</div><div class="line">&#125;</div><div class="line">function mapDispatchToProps(dispatch)&#123;</div><div class="line">    <span class="keyword">return</span>&#123;</div><div class="line">        actions:bindActionCreators(&#123;clickText:clickText,clickButton:clickButton&#125;,dispatch)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="type">App</span>= connect(mapStateToProps,mapDispatchToProps)(<span class="type">App</span>)</div><div class="line">export <span class="keyword">default</span> <span class="type">App</span></div></pre></td></tr></table></figure>
+<h4 id="connect"><a href="#connect" class="headerlink" title="connect"></a>connect</h4><p>这个组件才是真正连接 Redux 和 React，他包在我们的容器组件的外一层，他接收上面 Provider 提供的 store 里面的 state 和 dispatch，传给一个构造函数，返回一个对象，以属性形式床给我们的容器组件。</p>
+<p>如果你有耐心看到这里，你就很流弊啦，对比纯react的方式实现，你会发现，使用redux代码多了不是一点半点，真的有必要这样么？答案当然是：看你的项目需求~~~如果你的项目没有大量的数据交互，组件通信，你完全可以只用React，但是如果有的话，你会发现你要手动的管理state,对于后期维护很难，姑娘现在就遇到了这样的问题，代码初期考虑到学习成本，没有使用Redux,导致现在每个父组件一堆state要手动管理，重构起来简直不想多看一眼。</p>
 
       
     </div>
@@ -398,13 +412,21 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag"># React</a>
+          
+            <a href="/tags/Redux/" rel="tag"># Redux</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/21/React踩过的坑/" rel="next" title="React踩过的坑">
-                <i class="fa fa-chevron-left"></i> React踩过的坑
+              <a href="/2016/11/24/React组件通信/" rel="next" title="React组件通信">
+                <i class="fa fa-chevron-left"></i> React组件通信
               </a>
             
           </div>
@@ -437,8 +459,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/24/React-Redux/"
-           data-title="React-Redux" data-url="http://yoursite.com/2016/11/24/React-Redux/">
+      <div class="ds-thread" data-thread-key="2016/11/24/React+Redux/"
+           data-title="React+Redux" data-url="http://yoursite.com/2016/11/24/React+Redux/">
       </div>
     
   </div>
@@ -483,7 +505,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -491,7 +513,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -500,7 +522,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -598,7 +620,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#纯React实现组件直接通信"><span class="nav-number">1.</span> <span class="nav-text">纯React实现组件直接通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redux-React实现"><span class="nav-number">2.</span> <span class="nav-text">Redux+React实现</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redux-React实现"><span class="nav-number">1.</span> <span class="nav-text">Redux+React实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Provider"><span class="nav-number">1.1.</span> <span class="nav-text">Provider</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reducer"><span class="nav-number">1.2.</span> <span class="nav-text">Reducer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Action"><span class="nav-number">1.3.</span> <span class="nav-text">Action</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#connect"><span class="nav-number">1.4.</span> <span class="nav-text">connect</span></a></li></ol></li></ol></div>
             
 
           </div>
