@@ -251,7 +251,7 @@ a {
   margin: 3px;
 }
 #container .left-col {
-  background: url("../img/bg.jpeg") #515457;
+  background: url("../background/bg.jpeg") #515457;
   width: 300px;
   position: fixed;
   opacity: 1;
