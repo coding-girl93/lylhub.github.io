@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/23/网页版实现录音/index.html">
 <meta property="og:site_name" content="乖，摸摸头">
 <meta property="og:description" content="使用网页实现录音功能">
-<meta property="og:updated_time" content="2016-12-23T07:07:32.000Z">
+<meta property="og:updated_time" content="2016-12-23T07:11:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网页版录音">
 <meta name="twitter:description" content="使用网页实现录音功能">
@@ -286,7 +286,7 @@
 <figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="javascript"><span class="keyword">var</span> recorder;</span></div><div class="line">  <span class="keyword">var</span> audio = <span class="built_in">document</span>.querySelector(<span class="string">'audio'</span>);</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">startRecording</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      HZRecorder.get(<span class="function"><span class="keyword">function</span> (<span class="params">rec</span>) </span>&#123;</div><div class="line">          recorder = rec;</div><div class="line">          recorder.start();</div><div class="line">          &#125;);</div><div class="line"></div><div class="line">    <span class="comment">//   recorder.connect(context.destination);</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//   function obtainRecord()&#123;</span></div><div class="line"><span class="comment">//       var record = recorder.getBlob();</span></div><div class="line"><span class="comment">//       debugger;</span></div><div class="line"><span class="comment">//   &#125;;</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">stopRecording</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      recorder.stop();</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">playRecording</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      recorder.play(audio);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">uploadAudio</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      recorder.upload(<span class="string">''</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">      &#125;)</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 <p><code>注意</code>：只适用于html网页访问，移动端不适用哦<br>原因请见：<a href="https://segmentfault.com/q/1010000005952605" target="_blank" rel="external">https://segmentfault.com/q/1010000005952605</a></p>
 <p>参考资料：<a href="http://blog.csdn.net/gf771115/article/details/45643271" target="_blank" rel="external">http://blog.csdn.net/gf771115/article/details/45643271</a></p>
-<p>如果你读到这里了，来，默默头！好运~~</p>
+<p>如果你读到这里了，来，摸摸头！好运~~</p>
 
       
     </div>
@@ -298,7 +298,7 @@
         <p><span>本文标题:</span><a href="/2016/12/23/网页版实现录音/">网页版录音</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 丫头丫头摸摸头 的个人博客">丫头丫头摸摸头</a></p>
         <p><span>发布时间:</span>2016年12月23日 - 00时00分</p>
-        <p><span>最后更新:</span>2016年12月23日 - 15时07分</p>
+        <p><span>最后更新:</span>2016年12月23日 - 15时11分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/12/23/网页版实现录音/" title="网页版录音">http://yoursite.com/2016/12/23/网页版实现录音/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/12/23/网页版实现录音/　　作者: 丫头丫头摸摸头" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
