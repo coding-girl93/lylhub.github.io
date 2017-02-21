@@ -3,18 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>React踩过的坑 | 乖，摸摸头</title>
+  <title>移动端input获取焦点后破坏fixed定位的元素 | 乖，摸摸头</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="setState延迟">
+  <meta name="description" content="h5页面中，经常会有这样的场景在一个fixed定位的元素上输入信息，但是移动端input会唤起软键盘，软键盘会更改视口viewport大小，导致fixed定位的元素被破坏">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React踩过的坑">
-<meta property="og:url" content="http://yoursite.com/2016/11/21/React踩过的坑/index.html">
+<meta property="og:title" content="移动端input获取焦点后破坏fixed定位的元素">
+<meta property="og:url" content="http://yoursite.com/2017/02/21/移动端input获取焦点后破坏fixed定位/index.html">
 <meta property="og:site_name" content="乖，摸摸头">
-<meta property="og:description" content="setState延迟">
-<meta property="og:updated_time" content="2016-11-24T11:54:48.000Z">
+<meta property="og:description" content="h5页面中，经常会有这样的场景在一个fixed定位的元素上输入信息，但是移动端input会唤起软键盘，软键盘会更改视口viewport大小，导致fixed定位的元素被破坏">
+<meta property="og:image" content="https://si.geilicdn.com/hz_img_030d0000015a5fa1f2a70a026860_719_1280.jpeg">
+<meta property="og:image" content="https://si.geilicdn.com/hz_img_08840000015a5fa1f2cd0a02685e_719_1280.jpeg">
+<meta property="og:image" content="https://si.geilicdn.com/hz_img_030e0000015a5fa1f2d00a026860_719_1280.jpeg">
+<meta property="og:updated_time" content="2017-02-21T08:06:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React踩过的坑">
-<meta name="twitter:description" content="setState延迟">
+<meta name="twitter:title" content="移动端input获取焦点后破坏fixed定位的元素">
+<meta name="twitter:description" content="h5页面中，经常会有这样的场景在一个fixed定位的元素上输入信息，但是移动端input会唤起软键盘，软键盘会更改视口viewport大小，导致fixed定位的元素被破坏">
+<meta name="twitter:image" content="https://si.geilicdn.com/hz_img_030d0000015a5fa1f2a70a026860_719_1280.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="乖，摸摸头" type="application/atom+xml">
   
@@ -234,11 +238,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-React踩过的坑" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-移动端input获取焦点后破坏fixed定位" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/21/React踩过的坑/" class="article-date">
-      <time datetime="2016-11-21T15:34:02.000Z" itemprop="datePublished">2016-11-21</time>
+      <a href="/2017/02/21/移动端input获取焦点后破坏fixed定位/" class="article-date">
+      <time datetime="2017-02-21T08:02:13.000Z" itemprop="datePublished">2017-02-21</time>
 </a>
     </div>
   
@@ -251,7 +255,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      React踩过的坑
+      移动端input获取焦点后破坏fixed定位的元素
     </h1>
   
 
@@ -260,13 +264,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/React/">React</a>
+    <a class="article-category-link" href="/categories/css/">css</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fixed/">fixed</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -276,16 +280,31 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="setState延迟"><a href="#setState延迟" class="headerlink" title="setState延迟"></a>setState延迟</h3><a id="more"></a>
+        <p>h5页面中，经常会有这样的场景在一个fixed定位的元素上输入信息，但是移动端input会唤起软键盘，软键盘会更改视口viewport大小，导致fixed定位的元素被破坏</p>
+<a id="more"></a>
 <ul>
-<li>分页操作，点击下一页，第一次点击无效，第二次点击生效</li>
+<li><p>html</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://wd.geilicdn.com/vshop164096035-145199488880-6520909.jpg?w=460&amp;h=675?w=750"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://wd.geilicdn.com/vshop164096035-145199488880-6520909.jpg?w=460&amp;h=675?w=750"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://wd.geilicdn.com/vshop164096035-145199488880-6520909.jpg?w=460&amp;h=675?w=750"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://wd.geilicdn.com/vshop164096035-145199488880-6520909.jpg?w=460&amp;h=675?w=750"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- &lt;div class="button"&gt;点击弹出浮层&lt;/div&gt; --&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"layer"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></div><div class="line">            获取焦点<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>less</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.layer</span>&#123;</div><div class="line">    <span class="attribute">position</span>: fixed;</div><div class="line">    <span class="attribute">top</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">background-color</span>: rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.7</span>);</div><div class="line">    <span class="selector-class">.wrap</span>&#123;</div><div class="line">        <span class="attribute">height</span>: <span class="number">80px</span>;</div><div class="line">        <span class="attribute">position</span>: fixed;</div><div class="line">        <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">        <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">        <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">        <span class="attribute">background-color</span>: red;</div><div class="line">        <span class="selector-tag">input</span>&#123;</div><div class="line">            <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">            <span class="attribute">height</span>: <span class="number">40px</span>;</div><div class="line">            <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#e8e8e8</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>页面</p>
+<p><img src="https://si.geilicdn.com/hz_img_030d0000015a5fa1f2a70a026860_719_1280.jpeg" alt=""></p>
+</li>
 </ul>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.setState(&#123;firstRow:<span class="function"><span class="params">(page<span class="number">-1</span>)</span>*pageSize&#125;,<span class="params">()</span>=&gt;</span>&#123;</div><div class="line">    <span class="keyword">this</span>.refresh()</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
-<p>利用setState的回调，等到状态更改成功之后再操作</p>
-<h3 id="列表页删除一项后，列表页不能实时刷新"><a href="#列表页删除一项后，列表页不能实时刷新" class="headerlink" title="列表页删除一项后，列表页不能实时刷新"></a>列表页删除一项后，列表页不能实时刷新</h3><p>原因：删除操作后，后端可能还没处理好，就重新拉取数据，导致数据没有变化</p>
-<p>通过设置延迟</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">setTimeout</span><span class="params">(this.refresh,<span class="number">1000</span>)</span></span></div></pre></td></tr></table></figure>
-<p>或者将列表缓存到数组中，直接对数组进行操作，删除后无需再次拉取数据</p>
+<ul>
+<li><p>移动端input获取焦点后</p>
+<p><img src="https://si.geilicdn.com/hz_img_08840000015a5fa1f2cd0a02685e_719_1280.jpeg" alt=""></p>
+<p><code>会发现原本固定在底部的元素被破坏掉了，页面结构发生了变化</code>问题来了，什么原因导致fixed元素被破坏了呢？</p>
+<p>我们知道fixed是相对于视口viewport进行定位的（fixed<a href="https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/" target="_blank" rel="external">戳这里</a>、<a href="http://zh.learnlayout.com/position.html" target="_blank" rel="external">点这里</a>）</p>
+<p>当获取焦点唤起小键盘后，viewport被破坏，而html,body的高度并没有改变(内容的高度大于viewport的高度)页面依旧可以滚动，但是fixed定位的元素只有viewport的大小</p>
+<p><code>设置html,body的高度height：100%</code>（内容高度==viewport高度即可）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span>,<span class="selector-tag">body</span>&#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">overflow</span>: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="https://si.geilicdn.com/hz_img_030e0000015a5fa1f2d00a026860_719_1280.jpeg" alt=""></p>
+<p>​</p>
+</li>
+</ul>
 
       
     </div>
@@ -294,13 +313,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/11/21/React踩过的坑/">React踩过的坑</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/21/移动端input获取焦点后破坏fixed定位/">移动端input获取焦点后破坏fixed定位的元素</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 丫头丫头摸摸头 的个人博客">丫头丫头摸摸头</a></p>
-        <p><span>发布时间:</span>2016年11月21日 - 23时34分</p>
-        <p><span>最后更新:</span>2016年11月24日 - 19时54分</p>
+        <p><span>发布时间:</span>2017年02月21日 - 16时02分</p>
+        <p><span>最后更新:</span>2017年02月21日 - 16时06分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/11/21/React踩过的坑/" title="React踩过的坑">http://yoursite.com/2016/11/21/React踩过的坑/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/21/React踩过的坑/　　作者: 丫头丫头摸摸头" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/21/移动端input获取焦点后破坏fixed定位/" title="移动端input获取焦点后破坏fixed定位的元素">http://yoursite.com/2017/02/21/移动端input获取焦点后破坏fixed定位/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/02/21/移动端input获取焦点后破坏fixed定位/　　作者: 丫头丫头摸摸头" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -313,18 +332,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/11/24/React组件通信/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          React组件通信
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/09/13/Angular-popups/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Angular-popups</div>
+    <a href="/2016/12/23/网页版实现录音/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网页版录音</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -335,7 +345,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#setState延迟"><span class="toc-number">1.</span> <span class="toc-text">setState延迟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表页删除一项后，列表页不能实时刷新"><span class="toc-number">2.</span> <span class="toc-text">列表页删除一项后，列表页不能实时刷新</span></a></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -383,7 +393,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/11/21/React踩过的坑/" data-title="React踩过的坑" data-url="http://yoursite.com/2016/11/21/React踩过的坑/"></div>
+    <div class="ds-thread" data-thread-key="2017/02/21/移动端input获取焦点后破坏fixed定位/" data-title="移动端input获取焦点后破坏fixed定位的元素" data-url="http://yoursite.com/2017/02/21/移动端input获取焦点后破坏fixed定位/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -406,13 +416,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/11/24/React组件通信/" title="上一篇: React组件通信">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/09/13/Angular-popups/" title="下一篇: Angular-popups">
+            <a href="/2016/12/23/网页版实现录音/" title="下一篇: 网页版录音">
                 <i class="fa fa-angle-right"></i>
             </a>
         
